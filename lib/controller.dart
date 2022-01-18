@@ -5,15 +5,17 @@ import 'dart:core';
 
 class HomeController extends GetxController
     with GetSingleTickerProviderStateMixin {
-  RxString articleNumber = "".obs;
+  RxString articleName = "".obs;
+  RxString articlePath = "".obs;
   RxBool isArticleShow = false.obs;
 
   late String mainfestJson;
   late List<String> assets;
   List<String> chineseFileName = [];
 
-  showArticle(String name) {
-    articleNumber.value = name;
+  showArticle(String path) {
+    articlePath.value = path;
+    articleName.value = path.split('/').last.replaceAll('.md', '');
     isArticleShow.value = true;
   }
 

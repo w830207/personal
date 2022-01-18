@@ -3,13 +3,14 @@ import 'dart:async';
 import 'package:get/get.dart';
 
 class AnimationExampleController extends GetxController {
-  RxBool quadratic = false.obs;
+  RxBool quadraticAnimation = false.obs;
+  RxBool quadraticArticle = false.obs;
 
   playQuadraticAnimation() {
-    if (!quadratic.value) {
-      quadratic.value = true;
+    if (!quadraticAnimation.value) {
+      quadraticAnimation.value = true;
       Timer(const Duration(milliseconds: 5000), () {
-        quadratic.value = false;
+        quadraticAnimation.value = false;
       });
     }
   }

@@ -21,7 +21,7 @@ class ArticlesGrid extends StatelessWidget {
             child: GestureDetector(
               onTap: () {
                 controller.showArticle(
-                    controller.assets[i].split('/').last.replaceAll('.md', ''));
+                    controller.assets[i]);
               },
               child: SizedBox(
                 width: 200,

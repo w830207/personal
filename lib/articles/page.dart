@@ -86,7 +86,7 @@ class ArticlesPage extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.6,
                     height: MediaQuery.of(context).size.height * 0.9,
                     child: Article(
-                      name: controller.articleNumber.value.toString(),
+                      path: controller.articlePath.value,
                     ),
                   ),
                 ),
