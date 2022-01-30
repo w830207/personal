@@ -69,3 +69,4 @@ class _BezierQuadraticState extends State<BezierQuadratic>
         });
   }
 }
+
