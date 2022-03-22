@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
             top: MediaQuery.of(context).size.height / 2 - 50,
             child: GestureDetector(
               onHorizontalDragUpdate: (_) => _key.currentState!.openDrawer(),
-              // onTap: () => _key.currentState!.openDrawer(),
+              onTap: () => _key.currentState!.openDrawer(),
               child: Image.asset(
                 "images/pull.png",
                 height: 100,

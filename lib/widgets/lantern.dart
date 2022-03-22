@@ -48,7 +48,7 @@ class _LanternState extends State<Lantern> with SingleTickerProviderStateMixin {
                 Container(
                   width: 200,
                   height: 200,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       color: Colors.amber, shape: BoxShape.circle),
                   alignment: Alignment.center,
                   child: const Text('測試搖晃動畫'),

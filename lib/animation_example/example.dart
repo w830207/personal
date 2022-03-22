@@ -14,7 +14,7 @@ class Example extends StatefulWidget {
   final String label;
   final String imageAdd;
   final String path;
-  final onTap;
+  final void Function() onTap;
 
   @override
   _ExampleState createState() => _ExampleState();

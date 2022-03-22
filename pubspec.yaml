@@ -30,7 +30,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  get: ^4.5.1
+  get: ^4.6.1
   flutter_markdown: ^0.6.9
 
 
