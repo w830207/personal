@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:personal/animation_example/example.dart';
 import 'package:personal/widgets/bezier_quadratic.dart';
+import 'package:personal/widgets/nav_bar_animation/nb.dart';
 import 'controller.dart';
 import 'package:personal/drawer.dart';
 
@@ -44,26 +45,76 @@ class AnimationExamplePage extends GetView<AnimationExampleController> {
               ),
             ),
           ),
+          // Positioned(
+          //   left: MediaQuery.of(context).size.width / 3,
+          //   child: Padding(
+          //     padding: const EdgeInsets.all(50.0),
+          //     child: Swiper(
+          //       itemCount: 2,
+          //       itemBuilder: (BuildContext context, int index) {
+          //         switch (index) {
+          //           case 0:
+          //             return Example(
+          //               label: "二階貝茲曲線動畫範例 按他→",
+          //               path: 'articles/animation_example/bezier_quadratic.md',
+          //               imageAdd: "images/shit.png",
+          //               onTap: (bool isArticleShown) {
+          //                 if (!isArticleShown) {
+          //                   controller.playQuadraticAnimation();
+          //                 }
+          //               },
+          //             );
+          //
+          //           default:
+          //             return Example(
+          //               label: "底部菜單動畫挑戰 按他→",
+          //               child: MyBottomNavBar(
+          //                 screenWidth: MediaQuery.of(context).size.width / 3,
+          //               ),
+          //               path:
+          //                   'articles/animation_example/challenge_bottom_bar.md',
+          //               imageAdd: "images/shit.png",
+          //               onTap: (bool isArticleShown) {},
+          //             );
+          //         }
+          //       },
+          //     ),
+          //   ),
+          // ),
           Positioned(
-            left: MediaQuery.of(context).size.width / 3,
-            child: Padding(
-              padding: const EdgeInsets.all(50.0),
-              child: Column(
-                children: [
-                  Obx(() {
-                    return Example(
-                      label: "二階貝茲曲線動畫範例 按他→",
-                      path: 'articles/animation_example/bezier_quadratic.md',
-                      imageAdd: "images/shit.png",
-                      crossState: controller.quadraticArticle.value,
-                      onTap: () {
-                        controller.playQuadraticAnimation();
-                        controller.quadraticArticle.value =
-                            !controller.quadraticArticle.value;
-                      },
-                    );
-                  }),
-                ],
+            left: 220,
+            child: SizedBox(
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width - 220,
+              child: Scrollbar(
+                controller: controller.sC,
+                child: SingleChildScrollView(
+                  controller: controller.sC,
+                  child: Column(
+                    children: [
+                      Example(
+                        label: "二階貝茲曲線動畫範例 按他→",
+                        path: 'articles/animation_example/bezier_quadratic.md',
+                        imageAdd: "images/shit.png",
+                        onTap: (bool isArticleShown) {
+                          if (!isArticleShown) {
+                            controller.playQuadraticAnimation();
+                          }
+                        },
+                      ),
+                      Example(
+                        label: "底部菜單動畫挑戰 按他→",
+                        child: MyBottomNavBar(
+                          screenWidth: MediaQuery.of(context).size.width / 3,
+                        ),
+                        path:
+                            'articles/animation_example/challenge_bottom_bar.md',
+                        imageAdd: "images/shit.png",
+                        onTap: (bool isArticleShown) {},
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
           ),

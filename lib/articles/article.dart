@@ -8,6 +8,7 @@ class Article extends StatelessWidget {
   final String path;
   Article({Key? key, required this.path}) : super(key: key);
 
+  ScrollController sc = ScrollController();
   final HomeController controller = Get.find();
   @override
   Widget build(BuildContext context) {
@@ -18,6 +19,7 @@ class Article extends StatelessWidget {
           return Markdown(
             data: snapshot.data,
             selectable: true,
+            controller: sc,
           );
         } else {
           return const Text(

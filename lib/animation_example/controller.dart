@@ -1,10 +1,10 @@
 import 'dart:async';
-
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AnimationExampleController extends GetxController {
   RxBool quadraticAnimation = false.obs;
-  RxBool quadraticArticle = false.obs;
+  ScrollController sC = ScrollController();
 
   playQuadraticAnimation() {
     if (!quadraticAnimation.value) {
