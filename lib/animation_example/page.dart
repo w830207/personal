@@ -4,7 +4,7 @@ import 'package:personal/animation_example/example.dart';
 import 'package:personal/widgets/bezier_quadratic.dart';
 import 'package:personal/widgets/nav_bar_animation/nb.dart';
 import 'controller.dart';
-import 'package:personal/drawer.dart';
+import 'package:personal/widgets/drawer.dart';
 
 class AnimationExamplePage extends GetView<AnimationExampleController> {
   final GlobalKey<ScaffoldState> _key = GlobalKey();

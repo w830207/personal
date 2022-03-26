@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:personal/common/font_theme.dart';
 import 'package:get/get.dart';
 import 'package:personal/common/langs.dart';
-import 'package:personal/controller.dart';
+import 'package:personal/articles/controller.dart';
 
 class ArticlesGrid extends StatelessWidget {
   ArticlesGrid({Key? key}) : super(key: key);
 
-  final HomeController controller = Get.find();
-  final Map lang =langs;
+  final ArticlesController controller = Get.find();
+  final Map lang = langs;
 
   @override
   Widget build(BuildContext context) {
-
     return GridView.count(
       mainAxisSpacing: 20,
       crossAxisSpacing: 20,
@@ -23,8 +22,7 @@ class ArticlesGrid extends StatelessWidget {
             borderRadius: BorderRadius.circular(50),
             child: GestureDetector(
               onTap: () {
-                controller.showArticle(
-                    controller.assets[i]);
+                controller.showArticle(controller.assets[i]);
               },
               child: SizedBox(
                 width: 200,

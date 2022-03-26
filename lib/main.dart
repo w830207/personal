@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:personal/pages.dart';
-import 'controller.dart';
+import 'articles/controller.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,7 +9,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
-  final HomeController controller = Get.put(HomeController());
+  final ArticlesController controller = Get.put(ArticlesController());
 
   // This widget is the root of your application.
   @override

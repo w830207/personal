@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:personal/common/font_theme.dart';
-import 'package:personal/drawer.dart';
-import 'package:personal/controller.dart';
+import 'package:personal/widgets/drawer.dart';
+import 'package:personal/articles/controller.dart';
 import 'article.dart';
 import 'articles_grid.dart';
 
 class ArticlesPage extends StatelessWidget {
   ArticlesPage({Key? key}) : super(key: key);
   final GlobalKey<ScaffoldState> _key = GlobalKey();
-  final HomeController controller = Get.find();
+  final ArticlesController controller = Get.find();
 
   @override
   Widget build(BuildContext context) {

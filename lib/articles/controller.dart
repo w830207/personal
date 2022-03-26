@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'dart:core';
 
-class HomeController extends GetxController
+class ArticlesController extends GetxController
     with GetSingleTickerProviderStateMixin {
   RxString articleName = "".obs;
   RxString articlePath = "".obs;
@@ -11,7 +11,6 @@ class HomeController extends GetxController
 
   late String mainfestJson;
   late List<String> assets;
-  List<String> chineseFileName = [];
 
   showArticle(String path) {
     articlePath.value = path;
@@ -30,5 +29,9 @@ class HomeController extends GetxController
         .keys
         .where((String key) => key.startsWith('articles'))
         .toList();
+    print(assets[0].split('/').last[0]);
+    print(assets);
+    assets.sort((a, b) => a.split('/').last[0].compareTo(b.split('/').last[0]));
+    print(assets);
   }
 }
